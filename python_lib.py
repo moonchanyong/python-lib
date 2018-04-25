@@ -39,6 +39,21 @@ def foreach(func, lis):
     for i, v in enumerate(lis):
         lis[i] = func(v)
 
+# 에라토스테네스의 채 num -> [num]
+def find_factor(num):
+    factors = list(range(2, num))
+    ret = []
+    for i in factors:
+        if i is -1:
+            continue
+
+        ret.append(i)
+        for mul in range(1,int(num/i)):
+            factors[mul * i -2] = -1
+
+    return ret
+
+
 # case dp
 # expression_dp :: [numbers] => [number]
 def expression_dp(*args, **kargs):
