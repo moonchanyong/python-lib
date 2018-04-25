@@ -29,10 +29,19 @@ def digit_reverse(n):
 # number -> 0bnumber
 bin(n)
 
-# setup_list :: [[index: number, value: number] .. ] -> void
+# 1차원 배열, expression은 지금 스트링만됨 
+# setup_list_without_expression :: list -> [[index: number, value: number] .. ] -> void
+# setup_list_wit_expression :: list -> expression X = 0 , O = 1 -> void
 def setup_list(*args, **kargs):
-    for i,v in args[1]:
-        args[0][i] = v
+    if len(kargs) is 0:
+        for i,v in args[1]:
+            args[0][i] = v
+    else:
+        for i in range(len(args[0])):
+            for key, value in kargs.items():
+                if key is args[0][i]:
+                    args[0][i] = value
+                    break;
 
 # list -> list
 def foreach(func, lis):
