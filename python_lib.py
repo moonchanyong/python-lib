@@ -53,6 +53,24 @@ def find_factor(num):
 
     return ret
 
+# 소인수 분해  factor :: number -> facotors:[number] -> [{facotr: count}]
+def factor(n, factors):
+    if n <= 0 :
+        return {}
+    f = {}
+    for k in factors :
+        while not (n % k) :
+            f[k] = f.setdefault(k, 0) + 1
+            n //= k
+    while n != 1 :
+        if k > n**0.5 :
+            f[n] = 1
+            break
+        while not (n % k) :
+            f[k] = f.setdefault(k, 0) + 1
+            n //= k
+        k += 2
+    return f
 
 # case dp
 # expression_dp :: [numbers] => [number]
