@@ -1,3 +1,7 @@
+import math
+# factorial
+math.factorial(number)
+
 def isPalindrome(string):
     lenStr = len(string)
     base = int(lenStr/2)
@@ -43,6 +47,13 @@ def setup_list(*args):
     ret = args[0]
     for i,v in args[1]:
         args[0][i] = v
+
+# 하나의 값만 제거 0부터시작
+# remove_list_one_eliment :: [] ->rmidx: number -> []
+def remove_list_one_eliment(arr, rmidx):
+    if 0 > rmidx and len(arr) <= rmidx:
+        raise ValueError + this.__name__
+    return arr[:rmidx] + arr[rmidx+1:]
 
 # 함수형언어에 맞지않지만 스스로에게 하는게 편할때가있다
 # list -> list
