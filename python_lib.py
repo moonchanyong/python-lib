@@ -29,7 +29,15 @@ def digit_reverse(n):
 # number -> 0bnumber
 bin(n)
 
-# 1차원 배열, expression은 지금 스트링만됨 
+# ex) one_to_one['num'+1] // value
+# 1 -> num1 == 'num' + 1 -> value
+one_to_one = {
+    num1  = 2,
+    num2 = 3
+}
+
+
+# 1차원 배열, expression은 지금 스트링만됨
 # setup_list_without_expression :: list -> [[index: number, value: number] .. ] -> void
 # setup_list_wit_expression :: list -> expression X = 0 , O = 1 -> void
 def setup_list(*args, **kargs):
