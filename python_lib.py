@@ -38,25 +38,19 @@ one_to_one = {
 
 
 # 1차원 배열, expression은 지금 스트링만됨
-# setup_list_without_expression :: list -> [[index: number, value: number] .. ] -> void
-# setup_list_wit_expression :: list -> expression X = 0 , O = 1 -> void
-def setup_list(*args, **kargs):
-    if len(kargs) is 0:
-        for i,v in args[1]:
-            args[0][i] = v
-    else:
-        for i in range(len(args[0])):
-            for key, value in kargs.items():
-                if key is args[0][i]:
-                    args[0][i] = value
-                    break;
+# setup_list to initial value :: [number: number] -> [[index, value]] -> [inited number: number]
+def setup_list(*args):
+    ret = args[0]
+    for i,v in args[1]:
+        args[0][i] = v
 
+# 함수형언어에 맞지않지만 스스로에게 하는게 편할때가있다
 # list -> list
 def foreach(func, lis):
     for i, v in enumerate(lis):
         lis[i] = func(v)
 
-# 에라토스테네스의 채 num -> [num]
+# 에라토스테네스의 채 to:number -> [factor:number]
 def find_factor(num):
     factors = list(range(2, num))
     ret = []
@@ -96,7 +90,7 @@ def expression_dp(*args, **kargs):
     currentIndex = args[1]
     ret = [] # write each index for sum
 
-    return
+    return ret
 
 
 import functools
