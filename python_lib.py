@@ -2,6 +2,28 @@ import math
 # factorial
 math.factorial(number)
 
+# list comprehension 오.. 갓 .. 유용 갓..
+ㅣ1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print ([v for v in l1 if v>4])
+timesten=dict([(v, v*10) for v in l1]) # dict로 나온다 숫자도 dict((i,v))
+
+
+import functools
+partial(func, value)
+
+def curry(func):
+    f_args = []
+    f_kwargs = {}
+    def f(*args, **kwargs):
+        nonlocal f_args, f_kwargs
+        if args or kwargs:
+            f_args += args
+            f_kwargs.update(kwargs)
+            return f
+        else:
+            return func(*f_args, *f_kwargs)
+    return f
+
 def isPalindrome(string):
     lenStr = len(string)
     base = int(lenStr/2)
