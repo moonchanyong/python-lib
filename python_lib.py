@@ -7,6 +7,13 @@ math.factorial(number)
 print ([v for v in l1 if v>4])
 timesten=dict([(v, v*10) for v in l1]) # dict로 나온다 숫자도 dict((i,v))
 
+# gcd 
+def gcd(a, b):
+  while (b != 0):
+    temp = a % b
+    a = b
+    b = temp
+  return abs(a)
 
 import functools
 partial(func, value)
